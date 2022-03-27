@@ -24,6 +24,11 @@ struct pcb_t * get_proc(void) {
 	 * [ready_queue] and return the highest priority one.
 	 * Remember to use lock to protect the queue.
 	 * */
+
+	if(empty(&ready_queue))
+		return NULL;
+	
+	
 	return proc;
 }
 
