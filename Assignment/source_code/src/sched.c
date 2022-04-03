@@ -33,7 +33,10 @@ struct pcb_t * get_proc(void) {
 			enqueue(&ready_queue, dequeue(&run_queue));
 		}
 	}
-	proc = dequeue(&ready_queue); // get a process from ready_queue
+	if(!empty(&ready_queue)) // if ready queue isn't empty
+	{
+		proc = dequeue(&ready_queue); // get a process from ready_queue
+	}
 	pthread_mutex_unlock(&queue_lock);
 	return proc;
 }

@@ -32,9 +32,9 @@ struct pcb_t * dequeue(struct queue_t * q) {
 		}
 	}
 	item = q->proc[idxOfMaxPriotity];
-	for(int i = idxOfMaxPriotity; i < q->size ; i++)
+	for(int i = idxOfMaxPriotity + 1; i < q->size ; i++)
 	{
-		q->proc[i] = q->proc[i + 1];
+		q->proc[i - 1] = q->proc[i];
 	}
 	q->size--;
 	return item;
