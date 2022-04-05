@@ -119,7 +119,7 @@ addr_t alloc_mem(uint32_t size, struct pcb_t * proc) {
 	 * to know whether this page has been used by a process.
 	 * For virtual memory space, check bp (break pointer).
 	 * */
-	
+
 	uint32_t num_pages_avail = 0;
 	for(int i = 0; i < NUM_PAGES; i++)
 	{
@@ -176,7 +176,7 @@ addr_t alloc_mem(uint32_t size, struct pcb_t * proc) {
 					}
 				}
 
-				// first 
+				// neu first index chua co trong segment table, ta tao page table moi
 				if(!isfirstIndex)
 				{
 					int n = proc->seg_table->size;
